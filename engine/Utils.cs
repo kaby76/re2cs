@@ -12,7 +12,7 @@ namespace engine
     /**
      * Various constants and helper utilities.
      */
-    abstract class Utils
+    public abstract class Utils
     {
 
         public static int[] EMPTY_INTS = { };

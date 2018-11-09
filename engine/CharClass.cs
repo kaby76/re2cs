@@ -18,7 +18,7 @@ namespace engine
      *
      * All methods mutate the internal state and return {@code this}, allowing operations to be chained.
      */
-    class CharClass
+    public class CharClass
     {
 
         private int[] r; // inclusive ranges, pairs of [lo,hi].  r.length is even.
@@ -447,14 +447,14 @@ namespace engine
                 if (lo == hi)
                 {
                     b.Append("0x");
-                    b.Append(lo.ToString("X"));
+                    b.Append(lo.ToString("x"));
                 }
                 else
                 {
                     b.Append("0x");
-                    b.Append(lo.ToString("X"));
+                    b.Append(lo.ToString("x"));
                     b.Append("-0x");
-                    b.Append(hi.ToString("X"));
+                    b.Append(hi.ToString("x"));
                 }
             }
 

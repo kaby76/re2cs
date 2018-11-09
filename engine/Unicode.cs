@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using engine;
-
-namespace engine
+﻿namespace engine
 {
     // From https://github.com/google/re2j
     // // Copyright 2010 The Go Authors. All rights reserved.
@@ -17,7 +12,7 @@ namespace engine
      *
      * @author adonovan@google.com (Alan Donovan)
      */
-    class Unicode
+    public class Unicode
     {
 
         // The highest legal rune value.
