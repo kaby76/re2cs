@@ -153,7 +153,7 @@ namespace engine
          * and other implementations use, although this package implements it without the expense of
          * backtracking. For POSIX leftmost-longest matching, see {@link #compilePOSIX}.
          */
-        static RE2 compile(String expr)
+        public static RE2 compile(String expr)
         {
             return compileImpl(expr, PERL, /*longest=*/ false);
         }
@@ -595,7 +595,7 @@ namespace engine
          * A return value of null indicates no match.
          */
         // This is visible for testing.
-        byte[] findUTF8(byte[] b)
+        public byte[] findUTF8(byte[] b)
         {
             int[] a = doExecute(MachineInput.fromUTF8(b), 0, UNANCHORED, 2);
             if (a == null)
@@ -614,7 +614,7 @@ namespace engine
          * A return value of null indicates no match.
          */
         // This is visible for testing.
-        int[] findUTF8Index(byte[] b)
+        public int[] findUTF8Index(byte[] b)
         {
             int[] a = doExecute(MachineInput.fromUTF8(b), 0, UNANCHORED, 2);
             if (a == null)
@@ -635,7 +635,7 @@ namespace engine
          * {@link #findSubmatch} if it is necessary to distinguish these cases.
          */
         // This is visible for testing.
-        String find(String s)
+        public String find(String s)
         {
             int[] a = doExecute(MachineInput.fromUTF16(s), 0, UNANCHORED, 2);
             if (a == null)
@@ -655,7 +655,7 @@ namespace engine
          * A return value of null indicates no match.
          */
         // This is visible for testing.
-        int[] findIndex(String s)
+        public int[] findIndex(String s)
         {
             int[] a = doExecute(MachineInput.fromUTF16(s), 0, UNANCHORED, 2);
             if (a == null)
@@ -675,7 +675,7 @@ namespace engine
          * A return value of null indicates no match.
          */
         // This is visible for testing.
-        byte[][] findUTF8Submatch(byte[] b)
+        public byte[][] findUTF8Submatch(byte[] b)
         {
             int[] a = doExecute(MachineInput.fromUTF8(b), 0, UNANCHORED, prog.numCap);
             if (a == null)
@@ -704,7 +704,7 @@ namespace engine
          * A return value of null indicates no match.
          */
         // This is visible for testing.
-        int[] findUTF8SubmatchIndex(byte[] b)
+        public int[] findUTF8SubmatchIndex(byte[] b)
         {
             return pad(doExecute(MachineInput.fromUTF8(b), 0, UNANCHORED, prog.numCap));
         }
@@ -718,7 +718,7 @@ namespace engine
          * A return value of null indicates no match.
          */
         // This is visible for testing.
-        String[] findSubmatch(String s)
+        public string[] findSubmatch(String s)
         {
             int[] a = doExecute(MachineInput.fromUTF16(s), 0, UNANCHORED, prog.numCap);
             if (a == null)
@@ -726,7 +726,7 @@ namespace engine
                 return null;
             }
 
-            String[] ret = new String[1 + numSubexp];
+            string[] ret = new string[1 + numSubexp];
             for (int i = 0; i < ret.Length; i++)
             {
                 if (2 * i < a.Length && a[2 * i] >= 0)
@@ -747,7 +747,7 @@ namespace engine
          * A return value of null indicates no match.
          */
         // This is visible for testing.
-        int[] findSubmatchIndex(String s)
+        public int[] findSubmatchIndex(String s)
         {
             return pad(doExecute(MachineInput.fromUTF16(s), 0, UNANCHORED, prog.numCap));
         }
