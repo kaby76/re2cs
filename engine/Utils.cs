@@ -57,8 +57,10 @@ namespace engine
                     @out.Append('\\');
                 }
 
-                @out.Append(rune);
-//                @out.appendCodePoint(rune);
+                // Extremely painful Dot NET!
+                // Convert UTF-32 character to a UTF-16 String.
+                var strC = Char.ConvertFromUtf32(rune);
+                @out.Append(strC);
                 return;
             }
 

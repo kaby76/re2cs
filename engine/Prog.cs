@@ -86,8 +86,11 @@ namespace engine
             // Have prefix; gather characters.
             while (Inst.isRuneOp(i.op) && i.runes.Length == 1 && (i.arg & RE2.FOLD_CASE) == 0)
             {
-//                prefix.appendCodePoint(i.runes[0]); // an int, not a byte.
-                prefix.Append(i.runes[0]);
+                //                prefix.appendCodePoint(i.runes[0]); // an int, not a byte.
+                // Extremely painful Dot NET!
+                // Convert UTF-32 character to a UTF-16 String.
+                var strC = Char.ConvertFromUtf32(i.runes[0]);
+                prefix.Append(strC);
                 i = skipNop(i.@out);
             }
 

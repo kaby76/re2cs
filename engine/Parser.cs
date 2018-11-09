@@ -928,7 +928,7 @@ namespace engine
             // |beforePos| must have been previously returned by |pos()|.
             public String from(int beforePos)
             {
-                return str.Substring(beforePos, _pos);
+                return str.Substring(beforePos, _pos - beforePos);
             }
 
             public override string ToString()
@@ -1278,7 +1278,7 @@ namespace engine
                     throw new PatternSyntaxException(ERR_INVALID_NAMED_CAPTURE, s);
                 }
 
-                String name = s.Substring(4, end); // "name"
+                String name = s.Substring(4, end - 4); // "name"
                 t.skipString(name);
                 t.skip(5); // "(?P<>"
                 if (!isValidCaptureName(name))
@@ -1937,7 +1937,7 @@ namespace engine
                     throw new PatternSyntaxException(ERR_INVALID_CHAR_RANGE, t.rest());
                 }
 
-                name = rest.Substring(0, end); // e.g. "Han"
+                name = rest.Substring(0, end - 0); // e.g. "Han"
                 t.skipString(name);
                 t.skip(1); // '}'
                 // Don't use skip(end) because it assumes UTF-16 coding, and
