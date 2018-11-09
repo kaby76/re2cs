@@ -11,3 +11,11 @@ UnitTestProject2/bin/
 UnitTestProject2/obj/
 UnitTestProject3/bin/
 UnitTestProject3/obj/
+tests/CharClassTest/bin/
+tests/CharClassTest/obj/
+tests/FindTest/bin/
+tests/FindTest/obj/
+tests/ParserTest/bin/
+tests/ParserTest/obj/
+tests/PatternTest/bin/
+tests/PatternTest/obj/

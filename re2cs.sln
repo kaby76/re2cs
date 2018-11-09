@@ -7,18 +7,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "program", "program\program.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "engine", "engine\engine.csproj", "{4290027A-7BF1-4D8E-99A8-EFB3E5769842}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3C1A7432-DA3D-4133-9238-678F48BB4929}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3C1A7432-DA3D-4133-9238-678F48BB4929}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharClassTest", "CharClassTest\CharClassTest.csproj", "{1B39DEA7-929A-4E85-95DF-8A6394FCB1D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharClassTest", "tests\CharClassTest\CharClassTest.csproj", "{1B39DEA7-929A-4E85-95DF-8A6394FCB1D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{F0D2CC44-3520-43E3-8F32-71ADEB32AC0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParserTest", "tests\ParserTest\ParserTest.csproj", "{F0D2CC44-3520-43E3-8F32-71ADEB32AC0F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4290027A-7BF1-4D8E-99A8-EFB3E5769842} = {4290027A-7BF1-4D8E-99A8-EFB3E5769842}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject2", "UnitTestProject2\UnitTestProject2.csproj", "{17F7DC82-166C-432B-B2E3-0E9F4A30C9AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatternTest", "tests\PatternTest\PatternTest.csproj", "{17F7DC82-166C-432B-B2E3-0E9F4A30C9AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject3", "UnitTestProject3\UnitTestProject3.csproj", "{E3852853-AD95-4A68-BB43-0A18C80CC25C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindTest", "tests\FindTest\FindTest.csproj", "{E3852853-AD95-4A68-BB43-0A18C80CC25C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
