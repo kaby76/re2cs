@@ -1,7 +1,8 @@
 # re2cs
 Port of the regular expression engine re2j https://github.com/google/re2j
 
-[RE2](https://github.com/google/re2) is a regular expression engine that runs in time linear in the size of the input. RE2/CS is a port of RE2/J (the Java port of the original RE2 C++ code) to C#.
+[RE2](https://github.com/google/re2) is a regular expression engine that runs in time linear in the size of the input.
+RE2/CS is a port of RE2/J to C#, which is a port of the original RE2 C++ code to Java.
 
 As with other languages, C#'s regular expression api (System.Text.RegularExpressions) uses a backtracking mechanism
 in matching regular expressions. This code uses [Thompson's NFA algorithm](https://dl.acm.org/citation.cfm?doid=363347.363387),
