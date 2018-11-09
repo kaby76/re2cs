@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
 namespace engine
 {
@@ -8,12 +9,28 @@ namespace engine
     {
         public static int toLowerCase(int codePoint)
         {
-            return System.Char.ToLower((char)codePoint, CultureInfo.CurrentCulture);
+            // Convert UTF-32 character to a UTF-16 String.
+            var strC = Char.ConvertFromUtf32(codePoint);
+
+            // Casing rules depends on the culture.
+            // Consider using ToLowerInvariant().
+            var lower = strC.ToLower(CultureInfo.InvariantCulture);
+
+            // Convert the UTF-16 String back to UTF-32 character and return it.
+            return Char.ConvertToUtf32(lower, 0);
         }
 
         public static int toUpperCase(int codePoint)
         {
-            return System.Char.ToUpper((char)codePoint, CultureInfo.CurrentCulture);
+            // Convert UTF-32 character to a UTF-16 String.
+            var strC = Char.ConvertFromUtf32(codePoint);
+
+            // Casing rules depends on the culture.
+            // Consider using ToLowerInvariant().
+            var lower = strC.ToUpper(CultureInfo.InvariantCulture);
+
+            // Convert the UTF-16 String back to UTF-32 character and return it.
+            return Char.ConvertToUtf32(lower, 0);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace engine
      * corresponds to {@code syntax.regexp} in the Go implementation; Go's {@code regexp} is called
      * {@code RE2} in Java.
      */
-    class Regexp
+    public class Regexp
     {
         public enum Op
         {

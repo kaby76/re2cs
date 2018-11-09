@@ -4,3 +4,6 @@ program/bin/
 program/obj/
 CharClassTest/bin/
 CharClassTest/obj/
+.vs/
+UnitTestProject1/bin/
+UnitTestProject1/obj/

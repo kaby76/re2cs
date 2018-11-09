@@ -84,7 +84,7 @@ namespace engine
         // Regexp END_TEXT was $, not \z.  Internal use only.
         public static int WAS_DOLLAR = 0x100;
 
-        static int MATCH_NL = CLASS_NL | DOT_NL;
+        public static int MATCH_NL = CLASS_NL | DOT_NL;
 
         // As close to Perl as possible.
         public static int PERL = CLASS_NL | ONE_LINE | PERL_X | UNICODE_GROUPS;

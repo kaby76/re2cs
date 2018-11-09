@@ -20,7 +20,7 @@ namespace engine
      *
      * The only public entry point is {@link #parse(String pattern, int flags)}.
      */
-    class Parser
+    public class Parser
     {
 
         // Unexpected error
