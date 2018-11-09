@@ -123,7 +123,7 @@ namespace engine
             int r = 0, c = 0;
             while (c < charlen)
             {
-                int rune = str[c]; //str.codePointAt(c);
+                int rune = Char.ConvertToUtf32(str, c); //str.codePointAt(c);
                 runes[r++] = rune;
                 c += CharCount(rune);
             }

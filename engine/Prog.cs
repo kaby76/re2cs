@@ -47,9 +47,7 @@ namespace engine
         {
             if (instSize >= inst.Length)
             {
-                var c = new Inst[inst.Length * 2];
-                Array.Copy(inst, c, inst.Length * 2);
-                inst = c;
+                Array.Resize(ref inst, inst.Length * 2);
             }
 
             inst[instSize] = new Inst(op);

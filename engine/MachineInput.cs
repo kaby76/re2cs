@@ -231,7 +231,7 @@ namespace engine
                 pos += start;
                 if (pos < end)
                 {
-                    int rune = str[pos];
+                    int rune = Char.ConvertToUtf32(str, pos);
                     return rune << 3 | CharCount(rune);
                 }
                 else
@@ -254,11 +254,14 @@ namespace engine
 
             public override int context(int pos)
             {
+                int before = pos;
                 pos += start;
- //               int r1 = pos > start && pos <= end ? Character.codePointBefore(str, pos) : -1;
- //               int r2 = pos < end ? Character.codePointAt(str, pos) : -1;
-                int r1 = pos > start && pos <= end ? str[pos] : -1;
-                int r2 = pos < end ? str[pos] : -1;
+                //               int r1 = pos > start && pos <= end ? Character.codePointBefore(str, pos) : -1;
+                //               int r2 = pos < end ? Character.codePointAt(str, pos) : -1;
+
+                int r1 = pos > start && pos < end ? Char.ConvertToUtf32(str, before) : -1;
+                int r2 = pos < end ? Char.ConvertToUtf32(str, pos) : -1;
+
                 return Utils.emptyOpContext(r1, r2);
             }
 

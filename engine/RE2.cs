@@ -201,10 +201,9 @@ namespace engine
                 throw new IllegalStateException("can't happen");
             }
 
-            if (re2.prefix.Length == 0)
+            if (re2.prefix.Length > 0)
             {
- //               re2.prefixRune = re2.prefix.codePointAt(0);
-                re2.prefixRune = re2.prefix[0];
+                re2.prefixRune = Char.ConvertToUtf32(re2.prefix, 0);
             }
 
             return re2;
@@ -289,7 +288,7 @@ namespace engine
          */
         public bool match(string input, int start, int end, int anchor, int[] group, int ngroup)
         {
-            if (start > end)
+            if (start >= end) // strings in Java and C# indexed from zero. But, java doesn't crash if over, c# crashes.
             {
                 return false;
             }
@@ -732,7 +731,7 @@ namespace engine
             {
                 if (2 * i < a.Length && a[2 * i] >= 0)
                 {
-                    ret[i] = s.Substring(a[2 * i], a[2 * i + 1]);
+                    ret[i] = s.Substring(a[2 * i], a[2 * i + 1] - a[2 * i]);
                 }
             }
 
@@ -824,7 +823,7 @@ namespace engine
                 MachineInput.fromUTF16(s),
                 n,
                 (int[] match) => {
-                    result.Add(s.Substring(match[0], match[1]));
+                    result.Add(s.Substring(match[0], match[1] - match[0]));
                 });
             if (!result.Any())
             {
@@ -941,7 +940,7 @@ namespace engine
                     {
                         if (match[2 * j] >= 0)
                         {
-                            slice[j] = s.Substring(match[2 * j], match[2 * j + 1]);
+                            slice[j] = s.Substring(match[2 * j], match[2 * j + 1] - match[2 * j]);
                         }
                     }
                     result.Add(slice);

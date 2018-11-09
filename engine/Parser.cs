@@ -872,7 +872,8 @@ namespace engine
             // Precondition: |more()|.
             public int peek()
             {
-                return str[pos()];
+                return Char.ConvertToUtf32(str, pos());
+ //               return str[pos()];
 //                return str.codePointAt(pos);
             }
 
@@ -900,7 +901,7 @@ namespace engine
             public int pop()
             {
  //               int r = str.codePointAt(pos);
-                int r = str[pos()];
+                int r = Char.ConvertToUtf32(str, pos());
                 _pos += CharCount(r);
                 return r;
             }
@@ -1284,7 +1285,7 @@ namespace engine
                 if (!isValidCaptureName(name))
                 {
                     throw new PatternSyntaxException(
-                        ERR_INVALID_NAMED_CAPTURE, s.Substring(0, end)); // "(?P<name>"
+                        ERR_INVALID_NAMED_CAPTURE, s.Substring(0, end - 0)); // "(?P<name>"
                 }
 
                 // Like ordinary capture, but named.

@@ -344,7 +344,7 @@ namespace engine
         public string substring(int start, int end)
         {
             // This is fast for both StringBuilder and String.
-            return inputSequence.Substring(start, end);
+            return inputSequence.Substring(start, end - start);
         }
 
         /** Helper for Pattern: return input length. */
