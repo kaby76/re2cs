@@ -164,7 +164,7 @@ namespace engine
         {
             T[] result = new T[b];
             if (a.Length > b)
-                for (int i = 0; i < a.Length; ++i)
+                for (int i = 0; i < b; ++i)
                     result[i] = a[i];
             else
                 for (int i = 0; i < b; ++i)

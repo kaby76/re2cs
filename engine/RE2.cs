@@ -643,7 +643,7 @@ namespace engine
                 return "";
             }
 
-            return s.Substring(a[0], a[1]);
+            return s.Substring(a[0], a[1] - a[0]);
         }
 
         /**
