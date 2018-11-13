@@ -28,7 +28,8 @@ namespace UnitTestProject3
         {
             try
             {
-                return Encoding.UTF8.GetBytes(s);
+                var r2 = Encoding.UTF8.GetBytes(s);
+                return r2;
             }
             catch (Exception e)
             {
